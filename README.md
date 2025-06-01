@@ -1,1 +1,1 @@
-[](video.gif)
+![](video.gif)
