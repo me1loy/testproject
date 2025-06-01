@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemeinsam Gutes tun</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<script>
+  function closeModal() {
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.classList.remove('show');
+    });
+  }
+</script>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Gemeinsam Gutes tun</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">Über uns</a></li>
+                    <li><a href="#projects">Projekte</a></li>
+                    <li><a href="#support">Helfen</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="full-bg-section">
+    <div class="full-bg">
+        <img src="st2901.png" alt="main_photo">
+    </div>
+</section>
+
+<section id="about" class="section text-block">
+    <div class="container">
+        <h2>Über unsere Organisation</h2>
+        <p>
+        Wir sind eine gemeinnützige Organisation, die Menschen, Tieren und der Natur hilft.
+        </p>
+        </p>
+        Unser Ziel ist es, Gutes zu tun und nachhaltige Veränderungen zu bewirken.
+        </p>
+        </p>
+        Ihr Beitrag macht die Welt zu einem besseren Ort!</p>
+    </div>
+</section>
+
+<section class="section text-block">
+    <div class="container">
+        <h2>Unsere Mission</h2>
+        </p>
+        Unsere Mission ist es, Menschen für gute Taten zu vereinen.
+        </p>
+        </p>
+        Wir setzen uns für den Schutz der Natur, die Unterstützung Bedürftiger und den Tierschutz ein.
+        </p>
+        </p>
+        Gemeinsam schaffen wir eine solidarische und verantwortungsvolle Gemeinschaft.Unsere Mission ist es, Menschen für gute Taten zu vereinen.
+        </p>
+    </div>
+</section>
+
+<section class="section text-block">
+    <div class="container">
+        <h2>Warum das wichtig ist</h2>
+        <p>Jeder Mensch kann einen Beitrag leisten, egal wie klein.
+            </p>
+            </p>
+         Gemeinsam können wir die Welt freundlicher, gerechter und sicherer machen.
+         </p>
+          </p>
+         Engagement beginnt mit kleinen Schritten – und führt zu großen Veränderungen.</p>
+    </div>
+</section>
+
+   
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <h2>Unsere Projekte</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="1.png" alt="kinder_hilfe">
+                    </div>
+                    <h3>Hilfe für Kinder</h3>
+                    <p>Organisation eines Sommercamps für bedürftige Kinder.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="3.png" alt="baumpflanz">
+                    </div>
+                    <h3>Baumpflanzaktionen</h3>
+                    <p>Aktionen zur Begrünung städtischer Parks.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="4.png" alt="tierschutz">
+                    </div>
+                    <h3>Tierschutz</h3>
+                    <p>Unterstützung eines Tierheims für obdachlose Tiere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<section id="support" class="section support-section">
+  <div class="container">
+    <h2>Ich möchte helfen</h2>
+
+    {{if .Success}}
+    <div class="modal show">
+      <div class="modal-content">
+        <p>{{.Success}}</p>
+        <button onclick="closeModal()">OK</button>
+      </div>
+    </div>
+    {{end}}
+
+    {{if .Error}}
+    <div class="modal show">
+      <div class="modal-content">
+        <p>{{.Error}}</p>
+        <button onclick="closeModal()">OK</button>
+      </div>
+    </div>
+    {{end}}
+
+    <form action="/support" method="post" class="support-form">
+      <p class="form-note">Felder mit * sind Pflichtfelder.</p>
+
+      <label for="full_name">Name *</label>
+      <input type="text" id="full_name" name="name" required>
+
+      <label for="email">E-Mail *</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="project">Projekt *</label>
+      <select id="project" name="project_id" required>
+        <option value="">Projekt auswählen</option>
+        <option value="1">Hilfe für Kinder</option>
+        <option value="2">Baumpflanzaktionen</option>
+        <option value="3">Tierschutz</option>
+      </select>
+
+      <label for="support_type">Art der Unterstützung</label>
+      <input type="text" id="support_type" name="help" placeholder="Zum Beispiel: Freiwilligenarbeit, Geld">
+
+      <label for="message">Nachricht</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <button type="submit" class="btn">Absenden</button>
+    </form>
+  </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 PGX Organisation</p>
+            <nav>
+                <ul>
+                    <li><a href="#support">Helfen</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
